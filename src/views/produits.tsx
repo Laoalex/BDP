@@ -1,0 +1,39 @@
+import {createContext, ReactElement} from "react";
+
+export type ProduitsType = {
+    Description: string,
+    Espèces: string,
+    Âge: number,
+    Longueur: number,
+    Dimension: number,
+    Emplacement: string,
+    Origine: string,
+}
+
+const initState: ProduitsType[] = [
+{
+    "Description": "Le bonsaï Zelkova Dai inspire la tranquillité et l'équilibre. Ses branches gracieuses et son allure raffinée apportent une touche d'harmonie à tout espace. En intérieur comme en extérieur, cet orme du Japon emplit son environnement d'une beauté naturelle et d'une élégance intemporelle. Son tronc distinctif et la délicate structure de son feuillage en font une véritable œuvre d'art, un cadeau idéal ou une pièce maîtresse parfaite dans votre intérieur.",
+    "Caractéristiques": "",
+    "Espèce": "Zelkova (Orme du Japon)",
+    "Âge": "18 ans",
+    "Longueur": "45cm",
+    "Dimensions du pot": "29cm",
+    "Emplacement": "Bonsaï d'intérieur et d'extérieur",
+    "Origine": "Asie"
+  }
+]
+
+export type UseProductsContextType = { produits: ProduitsType[] }
+
+const initContextState: UseProductsContextType = { produits: [] }
+
+const ProductsContext = createContext<UseProductsContextType>
+(initContextState)
+
+type ChildrenType = { children?: ReactElement | ReactElement[]}
+
+export const ProductsProvider = ({ children }: ChildrenType):
+ReactElement => {
+    const [products, setProducts] = useState<ProductType[]>
+    (initState)
+}
